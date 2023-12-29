@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/cssindex.css">
+    <title>Registration Form</title>
+</head>
+
+<body>
+    <header>
+        <div class="wrap">
+            <a href="/index.html"><div class="entypo-paper-plane logo"></div></a>
+            <ul>
+                <a href="#work"><li>work</li></a>
+                <a href="#skills"><li>skills</li></a>
+                <a href="#about"><li>about</li></a>
+                <a href="/login/login.html"><li>login/signup</li></a>
+            </ul>
+        </div>
+    </header>
+
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrap">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">Registration Form</h2>
+                </div>
+                <div class="card-body">
+                    <form action="connect.php" method="POST" id="registrationForm" onsubmit="return validateForm()">
+                        <div class="form-row">
+                            <div class="name">Name</div>
+                            <div class="value">
+                                <input class="input--style-5" type="text" name="Fname" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Phone</div>
+                            <div class="value">
+                                <input class="input--style-5" type="text" name="Phone" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Password</div>
+                            <div class="value">
+                                <input class="input--style-5" type="password" name="Password" id="password" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Re-Type Password</div>
+                            <div class="value">
+                                <input class="input--style-5" type="password" name="ConfirmPassword" id="confirmPassword" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Sex</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="Sex" required>
+                                            <option disabled="disabled" selected="selected">Choose option</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Age in years</div>
+                            <div class="value">
+                                <input class="input--style-5" type="number" name="Age" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Height in inches</div>
+                            <div class="value">
+                                <input class="input--style-5" type="number" name="Height" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Lunch preferences</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="RR_Count" required>
+                                            <option disabled="disabled" selected="selected">Choose option</option>
+                                            <option value="1">2 Roti+ Rice</option>
+                                            <option value="2">3 Roti</option>
+                                            <option value="3">Only Rice (no roti)</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Veg/Non-Veg</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="v_nv" required>
+                                            <option disabled="disabled" selected="selected">Choose option</option>
+                                            <option value="1">Veg</option>
+                                            <option value="2">Non-Veg</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Allergies</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="allergies[]" multiple class="exclude-from-validation">
+                                            <option disabled="disabled" selected="selected">Choose option</option>
+                                            <option value="0">No specific condition</option>
+                                            <option value="1">Lactose Intolerance</option>
+                                            <option value="2">Gluten Intolerance</option>
+                                            <option value="3">Diabeties</option>
+                                            <option value="4">Heart Disease</option>
+                                            <option value="5">Peanuts</option>
+                                            <option value="6">Tree Nuts</option>
+                                            <option value="7">Milk</option>
+                                            <option value="8">Eggs</option>
+                                            <option value="9">Wheat</option>
+                                            <option value="10">Soy</option>
+                                            <option value="11">Fish</option>
+                                            <option value="12">Shellfish</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name"></div>
+                            <div class="value">
+                                <button class="btn btn--radius-2 btn--red" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

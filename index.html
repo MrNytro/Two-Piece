@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="cssindex.css">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="wrap">
+            <a href="/index.html">
+                <div class="entypo-paper-plane logo"></div>
+            </a>
+            <ul>
+                <li><a href="#work">work</a></li>
+                <li><a href="#skills">skills</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="/login/login.html">login/signup</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div id="large_image">
+        <div class="wrap white">
+            <section id="hello">
+                <h1>Hello</h1>
+                <p>Fictum, deserunt mollit anim laborum astutumque! Quisque ut dolor gravida, placerat libero vel,
+                    euismod. Qui ipsorum lingua Celtae, nostra Galli appellantur. Etiam habebis sem dicantur magna
+                    mollis euismod. Cras mattis iudicium purus sit amet fermentum.</p>
+            </section>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <section id="work">
+            <h1>This is my work</h1>
+            <h2>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</h2>
+            <p>Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Cras
+                justo odio, dapibus ac facilisis in, egestas eget quam. Sed posuere consectetur est at lobortis. Aenean
+                lacinia bibendum nulla sed consectetur.</p>
+            
+        </section>
+    </div>
+
+    <div class="wrap">
+        <section id="skills">
+            <h1>My Skills</h1>
+            <h2>Me non paenitet nullum festiviorem excogitasse ad hoc. excogitasse ad hoc !</h2>
+
+            <div id="pattern" class="pattern">
+                <div class="col-group">
+                    <div>
+                        <li class="entypo-lamp"></li>
+                        <h3>Salutantibus vitae elit libero, a pharetra augue.</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque turpis diam, tincidunt nec
+                            convallis vitae, dapibus vitae enim. Nam bibendum nisl in risus imperdiet vestibulum.</p>
+                    </div>
+                    <div>
+                        <li class="entypo-flag"></li>
+                        <h3>Fictum, deserunt mollit anim laborum astutumque!</h3>
+                        <p>Sed sit amet molestie diam. Etiam adipiscing dictum eros, vitae feugiat augue convallis
+                            sit amet. Nunc quis massa non dolor dictum condimentum.</p>
+                    </div>
+                    <div>
+                        <li class="entypo-trophy"></li>
+                        <h3>Idque Caesaris facere voluntate liceret</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque turpis diam, tincidunt nec
+                            convallis vitae, dapibus vitae enim. Nam bibendum nisl in risus imperdiet vestibulum.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="wrap">
+        <section id="about">
+            <h1>About Me</h1>
+            <h2>Quo usque tandem abutere, Catilina, patientia nostra?</h2>
+            <p>Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Cras
+                justo odio, dapibus ac facilisis in, egestas eget quam. Sed posuere consectetur est at lobortis. Aenean
+                lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae
+                elit libero, a pharetra augue.</p>
+            <img class="me" src="http://gravatar.com/avatar/25b1fc64ba12614875c1e467d7e4c86e?s=512" alt="" />
+
+            <!-- Group of Elements -->
+            <ul>
+                <li class="entypo-twitter-circled"></li>
+                <li class="entypo-facebook-circled"></li>
+                <li class="entypo-linkedin-circled"></li>
+                <li class="entypo-dribbble-circled"></li>
+                <li class="entypo-linkedin-circled"></li>
+            </ul>
+        </section>
+    </div>
+
+    <section id="footer">
+        <div id="logo_footer">
+            <a href="#hello">
+                <div class="entypo-paper-plane logo"></div>
+            </a>
+        </div>
+        <p>Hello Pepper Plane<br>a theme by Julien Lepoivre<br>2013</p>
+    </section>
+
+    <script>
+        $(document).ready(function () {
+            $('header a').click(function () {
+                var href = $(this).attr('href');
+                var id = href.split('#').join('');
+                $('body, html').animate({
+                    'scrollTop': $('#' + id).offset().top
+                });
+                return false;
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/cssindex.css">
+    <title>Login Page</title>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a href="/index.html"><div class="entypo-paper-plane logo"></div></a>
+    <ul>
+      
+      <a href="/index.html"><li>Home</li></a>
+    </ul>
+    </div>
+  </header> 
+
+    <div class="login-page">
+        <div class="form">
+          <form class="register-form">
+            <input type="text" placeholder="name"/>
+            <input type="password" placeholder="password"/>
+            <input type="text" placeholder="email address"/>
+            <button>create</button>
+            <p class="message">Already registered? <a href="#">Sign In</a></p>
+          </form>
+          <form class="login-form">
+            <input type="text" placeholder="username"/>
+            <input type="password" placeholder="password"/>
+            <button>login</button>
+            <p class="message">Not registered? <a href="./register/register.html">Create an account</a></p>
+          </form>
+        </div>
+    </div>
+
+    <!-- Move the script to the end of the body to ensure the DOM is fully loaded before execution -->
+    <script>
+        // Use the document ready function to ensure the DOM is fully loaded before executing the script
+        $(document).ready(function () {
+            $('.message a').click(function(){
+                $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+            });
+        });
+    </script>
+</body>
+</html>
